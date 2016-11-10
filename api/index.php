@@ -1,8 +1,10 @@
 <?php
 
+use Slim\Slim;
+
 require 'vendor/autoload.php';
 
-$app = new \Slim\Slim();
+$app = new Slim();
 $app->get('/users', 'getUsers');
 $app->get('/users/:id', 'getUser');
 $app->post('/add_user', 'addUser');
@@ -100,5 +102,3 @@ function getConnection() {
 	$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	return $dbh;
 }
-
-?>
